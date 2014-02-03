@@ -36,8 +36,8 @@ def createVM(images, name):
     for image in images:
         if image["name"] == name:
             flavor = nova.flavors.find(name="m1.small")
-            nova.servers.create(name="exercise" + datetime.now()
-                                .microsecond, image=image, flavor=flavor)
+            nova.servers.create(name="exercise" + datetime.now().microsecond,
+                                image=image, flavor=flavor)
 
 if __name__ == "__main__":
     keystone = getKeystoneClient()
